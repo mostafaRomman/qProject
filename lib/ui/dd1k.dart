@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:q_project/logic/dd1k_logic.dart';
 import 'package:q_project/logic/xY.dart';
 
@@ -32,14 +33,17 @@ class _DD1KState extends State<DD1K> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Center(
           child: Text(
-            'Queueing Theory',
-            style: TextStyle(color: Colors.black),
+            'D/D/1/K-1  Model',
+            textScaleFactor: 1.2,
+            style: TextStyle(color: Colors.black,fontStyle: FontStyle.italic),
           ),
         ),
       ),
@@ -61,6 +65,7 @@ class _DD1KState extends State<DD1K> {
                 ),
                 lineBarsData: [
                   LineChartBarData(
+
                     spots: xY.map((e) => FlSpot(e.x, e.y)).toList(),
                     belowBarData: BarAreaData(show: true, colors: cList),
                   ),
