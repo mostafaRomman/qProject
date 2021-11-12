@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:q_project/ui/dd1k.dart';
+import 'package:q_project/ui/ui.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('dcv'),
-
-      ),
-    );
-  }
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: DD1K(),
+  ));
 }
