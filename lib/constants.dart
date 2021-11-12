@@ -1,2 +1,2 @@
-const lambda = 'λ';
-const mu = 'μ';
+// const lambda = 'λ';
+// const mu = 'μ';
