@@ -90,13 +90,14 @@ class _DD1KState extends State<DD1K> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.white,
+            elevation: 4,
             title: const Text(
               'D/D/1/K  Model',
               textScaleFactor: 1.2,
-              style:
-                  TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
+              style: TextStyle(
+                color: Colors.white,
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
           body: Container(
@@ -120,8 +121,7 @@ class _DD1KState extends State<DD1K> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3,
+                                  width: MediaQuery.of(context).size.width / 3,
                                   child: myTextField(
                                       ctx: context,
                                       lable: 'λ',
@@ -132,8 +132,7 @@ class _DD1KState extends State<DD1K> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3,
+                                  width: MediaQuery.of(context).size.width / 3,
                                   child: myTextField(
                                       ctx: context,
                                       lable: 'μ',
@@ -144,8 +143,7 @@ class _DD1KState extends State<DD1K> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3,
+                                  width: MediaQuery.of(context).size.width / 3,
                                   child: myTextField(
                                       ctx: context,
                                       lable: 'K',
@@ -156,8 +154,7 @@ class _DD1KState extends State<DD1K> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3,
+                                  width: MediaQuery.of(context).size.width / 3,
                                   child: myTextField(
                                       ctx: context,
                                       lable: 'M',
@@ -168,8 +165,7 @@ class _DD1KState extends State<DD1K> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3,
+                                  width: MediaQuery.of(context).size.width / 3,
                                   child: myTextField(
                                       ctx: context,
                                       lable: 'X Range',
@@ -180,8 +176,7 @@ class _DD1KState extends State<DD1K> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                                 child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3,
+                                  width: MediaQuery.of(context).size.width / 3,
                                   child: myTextField(
                                       ctx: context,
                                       lable: 'Y Range',
@@ -197,11 +192,12 @@ class _DD1KState extends State<DD1K> {
                       height: 12,
                     ),
                     OutlinedButton(
-                      child: const  Text(
-                      'Calc',
-                      textScaleFactor: 1.5,
-                      style: TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
-                    ),
+                      child: const Text(
+                        'Calc',
+                        textScaleFactor: 1.5,
+                        style: TextStyle(
+                            color: Colors.black, fontStyle: FontStyle.italic),
+                      ),
                       onPressed: () {
                         if (fKey.currentState!.validate()) {
                           // setState(() {
@@ -226,17 +222,13 @@ class _DD1KState extends State<DD1K> {
                             mu: double.parse(
                                 double.tryParse(muController.text) != null
                                     ? muController.text
-                                    : QCubit.get(context)
-                                        .currentMu
-                                        .toString()),
-                            k: int.parse(
-                                int.tryParse(kController.text) != null
-                                    ? kController.text
-                                    : '1'),
-                            m: int.parse(
-                                int.tryParse(mController.text) != null
-                                    ? mController.text
-                                    : '0'),
+                                    : QCubit.get(context).currentMu.toString()),
+                            k: int.parse(int.tryParse(kController.text) != null
+                                ? kController.text
+                                : '1'),
+                            m: int.parse(int.tryParse(mController.text) != null
+                                ? mController.text
+                                : '0'),
                           );
                           QCubit.get(context).getWqChart();
                           Navigator.push(context, MaterialPageRoute(

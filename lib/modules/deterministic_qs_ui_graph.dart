@@ -32,12 +32,14 @@ class _DD1KGraphState extends State<DD1KGraph> {
     return BlocConsumer<QCubit, QStates>(
       builder: (context, state) => Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
+          elevation: 4,
           title: const Text(
             'D/D/1/K  Details ',
             textScaleFactor: 1.2,
-            style: TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
+            style: TextStyle(
+              color: Colors.white,
+              fontStyle: FontStyle.italic,
+            ),
           ),
         ),
         body: Container(
@@ -49,55 +51,59 @@ class _DD1KGraphState extends State<DD1KGraph> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    OutlinedButton(
-                      onPressed: null,
-                      child: Text(
-                        'Ti = ${QCubit.get(context).d.getTi().toString()}',
-                        textScaleFactor: 1.5,
-                        style: const TextStyle(
-                            color: Colors.black, fontStyle: FontStyle.italic),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 6,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      OutlinedButton(
+                        onPressed: null,
+                        child: Text(
+                          'Ti = ${QCubit.get(context).d.getTi().toString()}',
+                          textScaleFactor: 1.5,
+                          style: const TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
                       ),
-                    ),
-                    OutlinedButton(
-                      onPressed: null,
-                      child: Text(
-                        'λ = ${(1 / QCubit.get(context).d.interArrivalTime).toString()}',
-                        textScaleFactor: 1.5,
-                        style: const TextStyle(
-                            color: Colors.black, fontStyle: FontStyle.italic),
+                      OutlinedButton(
+                        onPressed: null,
+                        child: Text(
+                          'λ = ${(1 / QCubit.get(context).d.interArrivalTime).toStringAsFixed(6)}',
+                          textScaleFactor: 1.5,
+                          style: const TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
                       ),
-                    ),
-                    OutlinedButton(
-                      onPressed: null,
-                      child: Text(
-                        'μ = ${(1 / QCubit.get(context).d.serviceTime).toStringAsFixed(6)}',
-                        textScaleFactor: 1.5,
-                        style: const TextStyle(
-                            color: Colors.black, fontStyle: FontStyle.italic),
+                      OutlinedButton(
+                        onPressed: null,
+                        child: Text(
+                          'μ = ${(1 / QCubit.get(context).d.serviceTime).toStringAsFixed(6)}',
+                          textScaleFactor: 1.5,
+                          style: const TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
                       ),
-                    ),
-                    OutlinedButton(
-                      onPressed: null,
-                      child: Text(
-                        'K = ${QCubit.get(context).d.systemCapacity.toString()}',
-                        textScaleFactor: 1.5,
-                        style: const TextStyle(
-                            color: Colors.black, fontStyle: FontStyle.italic),
+                      OutlinedButton(
+                        onPressed: null,
+                        child: Text(
+                          'K = ${QCubit.get(context).d.systemCapacity.toString()}',
+                          textScaleFactor: 1.5,
+                          style: const TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
                       ),
-                    ),
-                    OutlinedButton(
-                      onPressed: null,
-                      child: Text(
-                        'M = ${QCubit.get(context).d.M.toString()}',
-                        textScaleFactor: 1.5,
-                        style: const TextStyle(
-                            color: Colors.black, fontStyle: FontStyle.italic),
+                      OutlinedButton(
+                        onPressed: null,
+                        child: Text(
+                          'M = ${QCubit.get(context).d.M.toString()}',
+                          textScaleFactor: 1.5,
+                          style: const TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -106,6 +112,7 @@ class _DD1KGraphState extends State<DD1KGraph> {
                   padding: const EdgeInsets.all(16.0),
                   child: LineChart(
                     LineChartData(
+                        clipData: FlClipData.all(),
                         maxX: QCubit.get(context).xRange,
                         maxY: QCubit.get(context).yRange,
                         minX: 0,
@@ -136,6 +143,7 @@ class _DD1KGraphState extends State<DD1KGraph> {
                   padding: const EdgeInsets.all(16.0),
                   child: LineChart(
                     LineChartData(
+                        clipData: FlClipData.all(),
                         maxX: QCubit.get(context).xRange,
                         maxY: QCubit.get(context).getWqYRange(),
                         minX: 0,

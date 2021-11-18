@@ -56,6 +56,9 @@ class QCubit extends Cubit<QStates> {
 
   late double currentLambda, currentMu;
 
+  bool showWqChart = false;
+
+
   setMu({m}) {
     currentMu = m;
     emit(SetMuState());
