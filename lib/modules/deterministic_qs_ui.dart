@@ -233,7 +233,7 @@ class _DD1KState extends State<DD1K> {
                           QCubit.get(context).getWqChart();
                           Navigator.push(context, MaterialPageRoute(
                             builder: (context) {
-                              return DD1KGraph();
+                              return DD1KGraph(lambdaController.text,muController.text);
                             },
                           ));
                           // });

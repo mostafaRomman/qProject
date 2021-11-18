@@ -8,6 +8,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:q_project/shared/cubit.dart';
 
 class DD1KGraph extends StatefulWidget {
+  var lambda, mu;
+
+  DD1KGraph(this.lambda, this.mu);
+
   @override
   State<DD1KGraph> createState() => _DD1KGraphState();
 }
@@ -51,61 +55,58 @@ class _DD1KGraphState extends State<DD1KGraph> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 6,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      OutlinedButton(
-                        onPressed: null,
-                        child: Text(
-                          'Ti = ${QCubit.get(context).d.getTi().toString()}',
-                          textScaleFactor: 1.5,
-                          style: const TextStyle(
-                              color: Colors.black, fontStyle: FontStyle.italic),
-                        ),
+                child: Wrap(
+                  alignment: WrapAlignment.spaceEvenly,
+                  children: [
+                    OutlinedButton(
+                      onPressed: null,
+                      child: Text(
+                        'Ti = ${QCubit.get(context).d.getTi().toString()}',
+                        textScaleFactor: 1.5,
+                        style: const TextStyle(
+                            color: Colors.black, fontStyle: FontStyle.italic),
                       ),
-                      OutlinedButton(
-                        onPressed: null,
-                        child: Text(
-                          'λ = ${(1 / QCubit.get(context).d.interArrivalTime).toStringAsFixed(6)}',
-                          textScaleFactor: 1.5,
-                          style: const TextStyle(
-                              color: Colors.black, fontStyle: FontStyle.italic),
-                        ),
+                    ),
+                    OutlinedButton(
+                      onPressed: null,
+                      child: Text(
+                        'λ =${widget.lambda} ',
+                        textScaleFactor: 1.5,
+                        style: const TextStyle(
+                            color: Colors.black, fontStyle: FontStyle.italic),
                       ),
-                      OutlinedButton(
-                        onPressed: null,
-                        child: Text(
-                          'μ = ${(1 / QCubit.get(context).d.serviceTime).toStringAsFixed(6)}',
-                          textScaleFactor: 1.5,
-                          style: const TextStyle(
-                              color: Colors.black, fontStyle: FontStyle.italic),
-                        ),
+                    ),
+                    OutlinedButton(
+                      onPressed: null,
+                      child: Text(
+                        'μ = ${widget.mu}',
+                        textScaleFactor: 1.5,
+                        style: const TextStyle(
+                            color: Colors.black, fontStyle: FontStyle.italic),
                       ),
-                      OutlinedButton(
-                        onPressed: null,
-                        child: Text(
-                          'K = ${QCubit.get(context).d.systemCapacity.toString()}',
-                          textScaleFactor: 1.5,
-                          style: const TextStyle(
-                              color: Colors.black, fontStyle: FontStyle.italic),
-                        ),
+                    ),
+                    OutlinedButton(
+                      onPressed: null,
+                      child: Text(
+                        'K = ${QCubit.get(context).d.systemCapacity.toString()}',
+                        textScaleFactor: 1.5,
+                        style: const TextStyle(
+                            color: Colors.black, fontStyle: FontStyle.italic),
                       ),
-                      OutlinedButton(
-                        onPressed: null,
-                        child: Text(
-                          'M = ${QCubit.get(context).d.M.toString()}',
-                          textScaleFactor: 1.5,
-                          style: const TextStyle(
-                              color: Colors.black, fontStyle: FontStyle.italic),
-                        ),
+                    ),
+                    OutlinedButton(
+                      onPressed: null,
+                      child: Text(
+                        'M = ${QCubit.get(context).d.M.toString()}',
+                        textScaleFactor: 1.5,
+                        style: const TextStyle(
+                            color: Colors.black, fontStyle: FontStyle.italic),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
+              const Divider(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 3 / 4,
                 child: Padding(
