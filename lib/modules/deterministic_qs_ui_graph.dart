@@ -35,7 +35,7 @@ class _DD1KGraphState extends State<DD1KGraph> {
           elevation: 0,
           backgroundColor: Colors.white,
           title: const Text(
-            'D/D/1/K  Details -->',
+            'D/D/1/K  Details ',
             textScaleFactor: 1.2,
             style: TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
           ),
