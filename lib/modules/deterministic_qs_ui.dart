@@ -92,13 +92,11 @@ class _DD1KState extends State<DD1K> {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.white,
-            title: const Center(
-              child: Text(
-                'D/D/1/K-1  Model',
-                textScaleFactor: 1.2,
-                style:
-                    TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
-              ),
+            title: const Text(
+              'D/D/1/K  Model',
+              textScaleFactor: 1.2,
+              style:
+                  TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
             ),
           ),
           body: Container(
@@ -106,147 +104,151 @@ class _DD1KState extends State<DD1K> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 100),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Card(
-                        elevation: 4,
-                        child: Form(
-                          key: fKey,
-                          child: Padding(
-                            padding: const EdgeInsets.all(18.0),
-                            child: Wrap(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    child: myTextField(
-                                        ctx: context,
-                                        lable: 'λ',
-                                        controller: lambdaController),
-                                  ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Card(
+                      elevation: 4,
+                      child: Form(
+                        key: fKey,
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Wrap(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 3,
+                                  child: myTextField(
+                                      ctx: context,
+                                      lable: 'λ',
+                                      controller: lambdaController),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    child: myTextField(
-                                        ctx: context,
-                                        lable: 'μ',
-                                        controller: muController),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 3,
+                                  child: myTextField(
+                                      ctx: context,
+                                      lable: 'μ',
+                                      controller: muController),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    child: myTextField(
-                                        ctx: context,
-                                        lable: 'K',
-                                        controller: kController),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 3,
+                                  child: myTextField(
+                                      ctx: context,
+                                      lable: 'K',
+                                      controller: kController),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    child: myTextField(
-                                        ctx: context,
-                                        lable: 'M',
-                                        controller: mController),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 3,
+                                  child: myTextField(
+                                      ctx: context,
+                                      lable: 'M',
+                                      controller: mController),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    child: myTextField(
-                                        ctx: context,
-                                        lable: 'X Range',
-                                        controller: xRangeController),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 3,
+                                  child: myTextField(
+                                      ctx: context,
+                                      lable: 'X Range',
+                                      controller: xRangeController),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    child: myTextField(
-                                        ctx: context,
-                                        lable: 'Y Range',
-                                        controller: yRangeController),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 3,
+                                  child: myTextField(
+                                      ctx: context,
+                                      lable: 'Y Range',
+                                      controller: yRangeController),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 50,
-                      ),
-                      FloatingActionButton(
-                        child: const Text("calc"),
-                        onPressed: () {
-                          if (fKey.currentState!.validate()) {
-                            // setState(() {
-                            QCubit.get(context).clearXY();
-                            QCubit.get(context).setRanges(
-                              x: xRangeController.text.isNotEmpty
-                                  ? xRangeController.text
-                                  : '20.0',
-                              y: yRangeController.text.isNotEmpty
-                                  ? yRangeController.text
-                                  : '10.0',
-                            );
-                            QCubit.get(context).getGraphDetails(
-                              lambda: double.parse(
-                                  double.tryParse(lambdaController.text) != null
-                                      ? lambdaController.text
-                                      : QCubit.get(context)
-                                          .currentLambda
-                                          .toString()),
-                              mu: double.parse(
-                                  double.tryParse(muController.text) != null
-                                      ? muController.text
-                                      : QCubit.get(context)
-                                          .currentMu
-                                          .toString()),
-                              k: int.parse(
-                                  int.tryParse(kController.text) != null
-                                      ? kController.text
-                                      : '1'),
-                              m: int.parse(
-                                  int.tryParse(mController.text) != null
-                                      ? mController.text
-                                      : '0'),
-                            );
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return DD1KGraph();
-                              },
-                            ));
-                            // });
-                          }
-                        },
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    OutlinedButton(
+                      child: const  Text(
+                      'Calc',
+                      textScaleFactor: 1.5,
+                      style: TextStyle(color: Colors.black, fontStyle: FontStyle.italic),
+                    ),
+                      onPressed: () {
+                        if (fKey.currentState!.validate()) {
+                          // setState(() {
+                          QCubit.get(context).clearWqXyList();
+                          QCubit.get(context).clearNofTxyList();
+
+                          QCubit.get(context).setRanges(
+                            x: xRangeController.text.isNotEmpty
+                                ? xRangeController.text
+                                : '20.0',
+                            y: yRangeController.text.isNotEmpty
+                                ? yRangeController.text
+                                : '10.0',
+                          );
+                          QCubit.get(context).getNofTChart(
+                            lambda: double.parse(
+                                double.tryParse(lambdaController.text) != null
+                                    ? lambdaController.text
+                                    : QCubit.get(context)
+                                        .currentLambda
+                                        .toString()),
+                            mu: double.parse(
+                                double.tryParse(muController.text) != null
+                                    ? muController.text
+                                    : QCubit.get(context)
+                                        .currentMu
+                                        .toString()),
+                            k: int.parse(
+                                int.tryParse(kController.text) != null
+                                    ? kController.text
+                                    : '1'),
+                            m: int.parse(
+                                int.tryParse(mController.text) != null
+                                    ? mController.text
+                                    : '0'),
+                          );
+                          QCubit.get(context).getWqChart();
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return DD1KGraph();
+                            },
+                          ));
+                          // });
+                        }
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),

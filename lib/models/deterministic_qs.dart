@@ -1,3 +1,5 @@
+import 'package:flutter/rendering.dart';
+
 class DeterministicQS {
   int systemCapacity = 1, M = 0, ti = 0;
   double interArrivalTime = 1, serviceTime = 1;
@@ -13,12 +15,13 @@ class DeterministicQS {
     isCase1 = (interArrivalTime < serviceTime);
     M = 0;
     if (isCase1) {
-      int t = interArrivalTime.toInt();
+      int t = 0;
       for (;
           ((t / interArrivalTime).floor() -
-                      ((t - interArrivalTime) / serviceTime).floor())
+                      ((t / serviceTime) - interArrivalTime / serviceTime)
+                          .floor())
                   .toInt() !=
-              (systemCapacity + 1);
+              (systemCapacity);
           t++) {}
       ti = t;
     } else {
@@ -37,12 +40,13 @@ class DeterministicQS {
     isCase1 = (interArrivalTime < serviceTime);
     if (isCase1) {
       this.M = 0;
-      int t = interArrivalTime.toInt();
+      int t = 0;
       for (;
           ((t / interArrivalTime).floor() -
-                      ((t - interArrivalTime) / serviceTime).floor())
+                      ((t / serviceTime) - interArrivalTime / serviceTime)
+                          .floor())
                   .toInt() !=
-              (systemCapacity + 1);
+              (systemCapacity);
           t++) {}
       ti = t;
     } else {
@@ -85,6 +89,7 @@ class DeterministicQS {
 
   double wqOfN(int n) {
     if (isCase1) {
+      debugPrint('ti======$ti');
       if (n < (ti / interArrivalTime)) {
         return ((serviceTime - interArrivalTime) * (n - 1));
       }
@@ -96,6 +101,12 @@ class DeterministicQS {
     if (n < (ti / interArrivalTime)) {
       return (((M + n - 1) * serviceTime) - (n * interArrivalTime));
     }
+
     return 0;
+  }
+
+  getWqYRange() {
+    return ((serviceTime - interArrivalTime) * ((ti / interArrivalTime) - 2)) +
+        1;
   }
 }
